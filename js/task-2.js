@@ -26,13 +26,7 @@ const images = [
 ];
 
 
-window.addEventListener("load", () => {
-  const imagesGallery = document.querySelector(".gallery");
 
-  images.forEach(img => {
-    imagesGallery.insertAdjacentHTML(
-      "beforeend",
-      `<li><img src="${img.url}" alt="${img.alt}"></li>`
-    );
-  })
-});
+  const galleryImages = document.querySelector(".gallery");
+  const markup = images.map(img => `<li><img src="${img.url}" alt="${img.alt}"></li>`).join("");
+  galleryImages.insertAdjacentHTML("beforeend", markup);
